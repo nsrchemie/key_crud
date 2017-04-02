@@ -23,4 +23,5 @@ Ticket.add({
 
 	Ticket.defaultSort = '-createdAt';
 	Ticket.defaultColumns = 'title|20%, status|15%, createdBy, assignedTo, createdAt';
+	Ticket.schema.virtual('url').get(function() { return '/tickets/'+this.slug;});
 	Ticket.register();

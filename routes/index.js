@@ -12,11 +12,14 @@ var routes = {
 };
 
 // Setup Route Bindings
-exports = module.exports = function (app) {
+exports = module.exports = (app) => {
 	// Views
 	app.get('/', routes.views.index);
 	app.get('/tickets', (req,res) => {
 		res.send('show tickets here');
 		});
-
+	app.get('/tickets/:ticketslug', (req,res) => {
+		res.send('show ticket with slug : ' +
+		req.params.ticketslug);
+		});
 };
